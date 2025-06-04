@@ -1,0 +1,25 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container {
+        display: flex;
+        flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.todo-controls {
+    min-width: 200px;
+    max-width: max-content;
+    display: flex;
+        justify-content: space-between;
+    align-items: center;
+}

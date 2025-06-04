@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Star Rating</title>
+    <style>
+        .star-rating .star {
+        font-size: 2rem;
+        color: #ccc;
+        cursor: pointer;
+        user-select: none;
+        outline: none;
+        transition: color 0.2s;
+        }
+
+        .star-rating .star.hovered,
+        .star-rating .star.selected {
+        color: gold;
+        }
+
+        .star-rating .star:focus {
+        outline: 2px solid #000;
+        }
+    </style>
+</head>
+<body>
+<div id="star-rating" class="star-rating" role="radiogroup" aria-label="Star rating">
+  <span class="star" data-value="1" role="radio" aria-label="1 star" aria-checked="false" tabindex="0">★</span>
+  <span class="star" data-value="2" role="radio" aria-label="2 stars" aria-checked="false" tabindex="-1">★</span>
+  <span class="star" data-value="3" role="radio" aria-label="3 stars" aria-checked="false" tabindex="-1">★</span>
+  <span class="star" data-value="4" role="radio" aria-label="4 stars" aria-checked="false" tabindex="-1">★</span>
+  <span class="star" data-value="5" role="radio" aria-label="5 stars" aria-checked="false" tabindex="-1">★</span>
+</div>
+<p>Rating: <span id="rating-value">0</span></p>
+    <script src="./script.js"></script>
+</body>
+</html>

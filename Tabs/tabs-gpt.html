@@ -1,0 +1,55 @@
+<div role="tablist">
+  <button role="tab" aria-selected="true" aria-controls="panel1" id="tab1">Tab 1</button>
+  <button role="tab" aria-selected="false" aria-controls="panel2" id="tab2">Tab 2</button>
+</div>
+
+<div id="panel1" role="tabpanel" aria-labelledby="tab1">Content 1</div>
+<div id="panel2" role="tabpanel" aria-labelledby="tab2" hidden>Content 2</div>
+
+<script>
+  const tabs = document.querySelectorAll('[role="tab"]');
+  const panels = document.querySelectorAll('[role="tabpanel"]');
+
+  tabs.forEach(tab => {
+    tab.addEventListener("click", () => {
+      tabs.forEach(t => t.setAttribute("aria-selected", "false"));
+      panels.forEach(p => p.hidden = true);
+
+      tab.setAttribute("aria-selected", "true");
+      const panel = document.getElementById(tab.getAttribute("aria-controls"));
+      panel.hidden = false;
+    });
+  });
+</script>
+
+<style>
+  .tabs button.active {
+    font-weight: bold;
+    border-bottom: 2px solid black;
+  }
+</style>
+
+<div class="tabs">
+  <button class="active" data-target="panel1">Tab 1</button>
+  <button data-target="panel2">Tab 2</button>
+</div>
+
+<div id="panel1" class="tab-content">Content 1</div>
+<div id="panel2" class="tab-content" style="display:none;">Content 2</div>
+
+<script>
+  const buttons = document.querySelectorAll(".tabs button");
+  const contents = document.querySelectorAll(".tab-content");
+
+  buttons.forEach(button => {
+    button.addEventListener("click", () => {
+      // Remove active state
+      buttons.forEach(btn => btn.classList.remove("active"));
+      contents.forEach(content => content.style.display = "none");
+
+      // Activate clicked tab
+      button.classList.add("active");
+      document.getElementById(button.dataset.target).style.display = "block";
+    });
+  });
+</script>

@@ -1,0 +1,29 @@
+<button id="openModalBtn">Open Modal</button>
+
+<div id="modalBackdrop" class="backdrop" hidden></div>
+
+<div
+  id="modal"
+  class="modal"
+  role="dialog"
+  aria-modal="true"
+  aria-labelledby="modalTitle"
+  hidden
+>
+  <div class="modal-content">
+    <h2 id="modalTitle">Example Modal Dialog</h2>
+    <p>This is a modal dialog with keyboard support and accessibility.</p>
+    <button id="closeModalBtn">Close</button>
+  </div>
+</div>
+
+
+
+<!-- // Default Dialog -->
+<button id="openModalBtn">Open Modal</button>
+
+<dialog id="modal" aria-labelledby="modalTitle" aria-modal="true" role="dialog">
+  <h2 id="modalTitle">Native Dialog Modal</h2>
+  <p>This modal uses the native &lt;dialog&gt; element with accessibility.</p>
+  <button id="closeModalBtn">Close</button>
+</dialog>

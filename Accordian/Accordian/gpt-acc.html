@@ -1,0 +1,30 @@
+<div>
+  <button 
+    aria-expanded="false"
+    aria-controls="accordion-content"
+    id="accordion-toggle"
+    role="button"
+  >
+    Toggle Content
+  </button>
+
+  <div 
+    id="accordion-content"
+    role="region"
+    aria-labelledby="accordion-toggle"
+    hidden
+  >
+    <p>This is the content of the accordion.</p>
+  </div>
+</div>
+
+<script>
+  const toggle = document.getElementById("accordion-toggle");
+  const content = document.getElementById("accordion-content");
+
+  toggle.addEventListener("click", () => {
+    const expanded = toggle.getAttribute("aria-expanded") === "true";
+    toggle.setAttribute("aria-expanded", !expanded);
+    content.hidden = expanded;
+  });
+</script>
